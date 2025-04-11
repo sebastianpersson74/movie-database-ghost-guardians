@@ -3,13 +3,13 @@
 
 ## API
 ### Bred sökning
-http://www.omdbapi.com/?apikey=420db47c&s=[söksträng]
+`http://www.omdbapi.com/?apikey=420db47c&s=[söksträng]`
 
 ### Specifik sökning
-http://www.omdbapi.com/?apikey=420db47c&plot=full&i=[imdbID]
+`http://www.omdbapi.com/?apikey=420db47c&plot=full&i=[imdbID]`
 
 ### Jespers API
-https://santosnr6.github.io/Data/favoritemovies.json
+`https://santosnr6.github.io/Data/favoritemovies.json`
 
 
 
