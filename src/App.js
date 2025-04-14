@@ -4,11 +4,13 @@ import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import MovieGrid from "./components/MovieGrid";
 import MovieDetails from "./components/MovieDetails";
 import Carousel from "./components/Trailers";
-import MovieGrid from "./components/MovieGrid";
+import HandleSearch from "./components/movieSearch/HandleSearch";
+import Header from "./components/header/Header";
 
 function App() {
 
     return (
+          <Header />
           <div>
       <h1>Trailerkarusell 🎬</h1>
       <Carousel />
@@ -29,3 +31,4 @@ function App() {
 }
 
 export default App;
+

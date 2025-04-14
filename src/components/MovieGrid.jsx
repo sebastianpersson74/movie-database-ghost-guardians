@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+
 import { Link } from "react-router-dom";
+
 
 function MovieGrid() {
   const [movies, setMovies] = useState([]);
@@ -27,9 +29,13 @@ function MovieGrid() {
             <div key={movie.imdbID}>
               <h3>{movie.Title}</h3>
               <img src={movie.Poster} alt={movie.Title} style={{ width: "100%" }} />
+
+              <a href={movie.Trailer_link} target="_blank" rel="noopener noreferrer">Se trailer</a>
+
             <Link to={`/movie/${movie.imdbID}`}>
                 <button>Läs mer</button>
             </Link>
+
             </div>
           ))}
         </div>
