@@ -1,0 +1,11 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo,
+.favouriteBtn {
+    height: 4rem;
+    margin: 1rem;
+}

@@ -4,10 +4,33 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { 
+  createBrowserRouter, 
+  RouterProvider 
+} from "react-router-dom";
+
+import MovieGrid from "./components/MovieGrid"
+import SearchPage from "./components/movieSearch/SearchPage"
+import Test from './Test';
+
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />
+  },
+  {
+    path: "/search",
+    element: <SearchPage />
+
+  }
+])
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router = {router} />
   </React.StrictMode>
 );
 
