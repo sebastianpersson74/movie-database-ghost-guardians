@@ -1,6 +1,8 @@
+
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import './movieDetails.css';
 
 function MovieDetails() {
   const { imdbID } = useParams();
@@ -38,22 +40,26 @@ function MovieDetails() {
   if (!movie) return <p>Laddar detaljer...</p>;
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h2>{movie.Title} ({movie.Year})</h2>
-      <img src={movie.Poster} alt={movie.Title} style={{ maxWidth: "200px" }} />
-      <p><strong>Genre:</strong> {movie.Genre}</p>
-      <p><strong>Regissör:</strong> {movie.Director}</p>
-      <p><strong>Skådespelare:</strong> {movie.Actors}</p>
-      <p><strong>Plot:</strong> {movie.Plot}</p>
-      <p><strong>IMDB-betyg:</strong> {movie.imdbRating}</p>
-      <p><strong>Längd:</strong> {movie.Runtime}</p>
-      <p><strong>Språk:</strong> {movie.Language}</p>
+    <div className="movie-details-container">
+      <div className="movie-details-left">
+        <h2>{movie.Title} ({movie.Year})</h2>
+        <img src={movie.Poster} alt={movie.Title} />
+      </div>
+      <div className="movie-details-right">
+        <p><strong>Genre:</strong> {movie.Genre}</p>
+        <p><strong>Regissör:</strong> {movie.Director}</p>
+        <p><strong>Skådespelare:</strong> {movie.Actors}</p>
+        <p><strong>Plot:</strong> {movie.Plot}</p>
+        <p><strong>IMDB-betyg:</strong> {movie.imdbRating}</p>
+        <p><strong>Längd:</strong> {movie.Runtime}</p>
+        <p><strong>Språk:</strong> {movie.Language}</p>
 
-      {trailerLink && (
-        <a href={trailerLink} target="_blank" rel="noreferrer">
-          <button style={{ marginTop: "1rem" }}>🎬 Se trailer</button>
-        </a>
-      )}
+        {trailerLink && (
+          <a href={trailerLink} target="_blank" rel="noreferrer">
+            <button>🎬 Se trailer</button>
+          </a>
+        )}
+      </div>
     </div>
   );
 }
