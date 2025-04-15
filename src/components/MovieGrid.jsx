@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
 import { Link } from "react-router-dom";
+import "./movieGrid.css";
+import Trailers from "./Trailers";
 
 
 function MovieGrid() {
@@ -19,21 +20,23 @@ function MovieGrid() {
   }, []);
 
   return (
-    <div>
-      <h2>Filmlista</h2>
+
+    <div className="movie-wrapper">
+            <Trailers />
+      <h2>🎬 Våra favoritfilmer</h2>
       {movies.length === 0 ? (
         <p>Laddar filmer...</p>
       ) : (
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "1rem" }}>
+        <div className="movie-grid">
           {movies.map((movie) => (
-            <div key={movie.imdbID}>
-              <h3>{movie.Title}</h3>
-              <img src={movie.Poster} alt={movie.Title} style={{ width: "100%" }} />
-
-            <Link to={`/movie/${movie.imdbID}`}>
-                <button>Läs mer</button>
-            </Link>
-
+            <div className="movie-card" key={movie.imdbID}>
+              <img src={movie.Poster} alt={movie.Title} />
+              <div className="movie-info">
+                <h3>{movie.Title}</h3>
+                <Link to={`/movie/${movie.imdbID}`}>
+                  <button>Läs mer</button>
+                </Link>
+              </div>
             </div>
           ))}
         </div>
