@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 
+const FAV_LS_KEY = "FAVORITED_MOVIES";
+
 export const useFavourites = () => {
   const [favoritedMovies, setFavoritedMovies] = useState([]);
 
@@ -9,8 +11,7 @@ export const useFavourites = () => {
   );
 
   useEffect(() => {
-    const storedMovies =
-      JSON.parse(localStorage.getItem("favoritedMovies")) || [];
+    const storedMovies = JSON.parse(localStorage.getItem(FAV_LS_KEY)) || [];
     setFavoritedMovies(storedMovies);
   }, []);
 
@@ -19,7 +20,7 @@ export const useFavourites = () => {
       ? favoritedMovies.filter((m) => m.imdbID !== movie.imdbID)
       : [...favoritedMovies, movie];
     setFavoritedMovies(updatedMovies);
-    localStorage.setItem("favoritedMovies", JSON.stringify(updatedMovies));
+    localStorage.setItem(FAV_LS_KEY, JSON.stringify(updatedMovies));
   };
 
   return {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./searchPage.css";
 
-function HandleSearch() {
+function HandleSearch({children}) {
   const [searchInput, setSearchInput] = useState("");
   //const [searchResults, setSearchResults] = useState([]);
   const navigate = useNavigate();
@@ -13,15 +13,14 @@ function HandleSearch() {
 
   const handleSearch = async () => {
     try {
-      const response = await fetch(
-        `http://www.omdbapi.com/?apikey=420db47c&s=${searchInput}`,
-      );
+      const response = await fetch(`http://www.omdbapi.com/?apikey=420db47c&s=${searchInput}`);
       const data = await response.json();
-      navigate("/search", { state: { data: data.Search } });
+      navigate("/search", {state: {data: data.Search}});
       //console.log(data.Search);
     } catch (error) {
       console.error("Fel vid hämtning av data:", error);
     }
+    
   };
 
   return (
@@ -36,15 +35,11 @@ function HandleSearch() {
           if (e.key === "Enter") {
             e.preventDefault();
             handleSearch();
-          }
-        }}
+          } }}
       />
-      <button className="search-btn" onClick={handleSearch}>
-        Sök
-      </button>
+      <button className="search-btn" onClick={handleSearch}>Sök</button>
     </div>
   );
 }
 
 export default HandleSearch;
-

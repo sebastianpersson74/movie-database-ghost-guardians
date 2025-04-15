@@ -1,18 +1,22 @@
-import React from "react";
-import Header from "./components/header/Header";
+import { Routes, Route } from "react-router-dom";
 import MovieGrid from "./components/MovieGrid";
-import Carousel from "./components/Trailers";
+import MovieDetails from "./components/MovieDetails";
+import Header from "./components/header/Header";
+import SearchPage from "./components/movieSearch/SearchPage";
+import FavoritesPage from "./components/FavoritesPage";
 
 function App() {
   return (
-    <>
-      <Header showSearch={true} />
-      <div>
-        <h1>Trailerkarusell 🎬</h1>
-        <Carousel />
-      </div>
-      <MovieGrid />
-    </>
+    <div>
+      <Header />
+
+      <Routes>
+        <Route path="/" element={<MovieGrid />} />
+        <Route path="/movie/:imdbID" element={<MovieDetails />} />
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/favorites" element={<FavoritesPage />} />
+      </Routes>
+    </div>
   );
 }
 

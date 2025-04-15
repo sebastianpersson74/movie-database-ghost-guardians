@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+.movie-wrapper {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.movie-wrapper h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #ffd000;
+  text-align: center;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
+
+.movie-card {
+  background-color: rgb(34, 34, 34);
+  color: #ffd000;
+  border-radius: 10px;
+  width: 12rem;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.7s ease,
+    box-shadow 0.7s ease;
+  overflow: hidden;
+}
+
+.movie-card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 20px 0px darkgrey;
+}
+
+.movie-card img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 0.5rem;
+}
+
+.movie-info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-info-container > span {
+  cursor: pointer;
+}
+
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.8rem;
+}
+
+.movie-info h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #ffd000;
+}
+
+.movie-info button {
+  background-color: #ffd000;
+  border: none;
+  padding: 0.4rem 0.8rem;
+}
+
+.fav_header {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+

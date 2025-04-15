@@ -5,19 +5,16 @@ import Logo from "../../assets/logo.png";
 import Favourites from "../../assets/star.svg";
 import { Link } from "react-router-dom";
 
-const Header = ({ showSearch }) => {
+const Header = () => {
   return (
     <div className="header">
       <Link to="/">
         <img src={Logo} className="logo" alt="Logga" />
       </Link>
-      {showSearch && <HandleSearch />}
+      <HandleSearch />
       <Link to="/favorites">
         <img src={Favourites} className="favouriteBtn" alt="star" />
       </Link>
-      {/* <a href="/favorites"> */}
-      {/*   <img src={Favourites} className="favouriteBtn" alt="star" /> */}
-      {/* </a> */}
     </div>
   );
 };
