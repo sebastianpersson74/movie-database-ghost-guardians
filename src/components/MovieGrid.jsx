@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import "./movieGrid.css";
+import MovieGridItem from "./MovieGridItem";
 import Trailers from "./Trailers";
-
+import { useFavourites } from "../hooks/useFavorites";
 
 function MovieGrid() {
   const [movies, setMovies] = useState([]);
@@ -19,25 +19,24 @@ function MovieGrid() {
       });
   }, []);
 
-  return (
+  const { favoritedIds, handleFavoriteToggle } = useFavourites();
 
+  return (
     <div className="movie-wrapper">
-            <Trailers />
+      <Trailers />
       <h2>🎬 Våra favoritfilmer</h2>
       {movies.length === 0 ? (
         <p>Laddar filmer...</p>
       ) : (
         <div className="movie-grid">
           {movies.map((movie) => (
-            <div className="movie-card" key={movie.imdbID}>
-              <img src={movie.Poster} alt={movie.Title} />
-              <div className="movie-info">
-                <h3>{movie.Title}</h3>
-                <Link to={`/movie/${movie.imdbID}`}>
-                  <button>Läs mer</button>
-                </Link>
-              </div>
-            </div>
+
+            <MovieGridItem
+              key={movie.imdbID}
+              movie={movie}
+              handleFavoriteToggle={handleFavoriteToggle}
+              isFavorite={favoritedIds.includes(movie.imdbID)}
+            />
           ))}
         </div>
       )}
