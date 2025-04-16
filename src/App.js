@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
-import MovieGrid from "./components/MovieGrid";
-import MovieDetails from "./components/MovieDetails";
+import MovieGrid from "./pages/MovieGrid";
+import MovieDetails from "./components/movieDetails/MovieDetails";
 import Header from "./components/header/Header";
-import SearchPage from "./components/movieSearch/SearchPage";
-import FavoritesPage from "./components/FavoritesPage";
+import MovieSearchCard from "./pages/MovieSearchCard";
+import FavoritesPage from "./pages/FavoritesPage";
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MovieGrid />} />
         <Route path="/movie/:imdbID" element={<MovieDetails />} />
-        <Route path="/search" element={<SearchPage />} />
+        <Route path="/search" element={<MovieSearchCard />} />
         <Route path="/favorites" element={<FavoritesPage />} />
       </Routes>
     </div>

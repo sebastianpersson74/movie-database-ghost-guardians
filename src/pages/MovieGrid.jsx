@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "./movieGrid.css";
-import MovieGridItem from "./MovieGridItem";
-import Trailers from "./Trailers";
+import "../components/movieGrid/movieGrid.css";
+import MovieGridItem from "../components/movieGrid/MovieGridItem";
+import Trailers from "../components/trailers/Trailers";
 import { useFavourites } from "../hooks/useFavorites";
 
 function MovieGrid() {

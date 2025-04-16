@@ -1,6 +1,6 @@
 import React from "react";
 import { useFavourites } from "../hooks/useFavorites";
-import MovieGridItem from "./MovieGridItem";
+import MovieGridItem from "../components/movieGrid/MovieGridItem";
 
 const FavoritesPage = () => {
   const { handleFavoriteToggle, favoritedMovies } = useFavourites();

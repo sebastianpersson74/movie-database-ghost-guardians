@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./searchPage.css";
+import "./search.css";
 
 function HandleSearch({children}) {
   const [searchInput, setSearchInput] = useState("");
