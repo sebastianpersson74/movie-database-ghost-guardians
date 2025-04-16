@@ -5,6 +5,7 @@ import Header from "./components/header/Header";
 import SearchPage from "./components/movieSearch/SearchPage";
 import FavoritesPage from "./components/FavoritesPage";
 
+
 function App() {
   return (
     <div>

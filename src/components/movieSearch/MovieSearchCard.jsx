@@ -50,4 +50,3 @@ const MovieSearchCard = () => {
 // };
 
 export default MovieSearchCard;
-

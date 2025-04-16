@@ -30,6 +30,7 @@ function MovieGrid() {
       ) : (
         <div className="movie-grid">
           {movies.map((movie) => (
+
             <MovieGridItem
               key={movie.imdbID}
               movie={movie}
