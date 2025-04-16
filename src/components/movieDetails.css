@@ -40,3 +40,10 @@
     background-color: #e4c203;
   }
   
+  @media (max-width: 768px) {
+   
+    .movie-details-container {  
+      flex-direction: column;
+      align-items: center;
+    }
+}

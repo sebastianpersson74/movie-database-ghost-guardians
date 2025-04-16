@@ -9,3 +9,23 @@
     height: 4rem;
     margin: 1rem;
 }
+
+.mobile-logo {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktop-logo {
+        display: none;
+    }
+
+    .mobile-logo {
+        display: block;
+    }
+
+    .logo,
+    .favouriteBtn {
+    height: 2.5rem;
+    margin: 1rem;
+}
+}
