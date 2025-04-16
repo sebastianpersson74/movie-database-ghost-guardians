@@ -1,8 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import { useFavourites } from "../../hooks/useFavorites";
-import MovieGridItem from "../MovieGridItem";
-import "./searchPage.css";
+import { useFavourites } from "../hooks/useFavorites";
+import MovieGridItem from "../components/movieGrid/MovieGridItem";
 
 const MovieSearchCard = () => {
   //Här hämtas datan från sökningen som görs i HandleSearch

@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import MissingPoster from "../../assets/missing-poster.svg"
 
 const MovieGridItem = ({ movie, handleFavoriteToggle, isFavorite }) => {
   return (
     <div className="movie-card">
-      <img src={movie.Poster} alt={movie.Title} />
+      <img src={movie.Poster !== "N/A" ? movie.Poster : MissingPoster} />
+      
       <div className="movie-info-container">
         <div className="movie-info">
           <h3>{movie.Title}</h3>
