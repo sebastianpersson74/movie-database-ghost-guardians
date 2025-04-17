@@ -1,0 +1,49 @@
+
+.movie-details-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    gap: 2rem;
+  }
+  
+  .movie-details-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .movie-details-left img {
+    max-width: 200px;
+    margin-bottom: 1rem;
+  }
+  
+  .movie-details-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  
+  .movie-details-right button {
+    background-color: #ffd900; /* Styling the button like other buttons */
+    color: rgb(34, 34, 34);
+    border: none;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  .movie-details-right button:hover {
+    background-color: #e4c203;
+  }
+  
+  @media (max-width: 768px) {
+   
+    .movie-details-container {  
+      flex-direction: column;
+      align-items: center;
+    }
+}

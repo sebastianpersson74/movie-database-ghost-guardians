@@ -1,0 +1,54 @@
+/* STYLING FÖR SÖKFÄLTET */
+.search {
+  margin: 1rem;
+}
+
+.search-field {
+  border: none;
+  height: 3rem;
+  padding: 1rem;
+
+  border-radius: 30px 0 0 30px;
+}
+
+.search-btn {
+  border: none;
+  height: 3rem;
+  width: 4rem;
+
+  background-color: #ffd000;
+  border-radius: 0 30px 30px 0;
+
+  transition: background-color ease 1s;
+}
+
+.search-btn:hover {
+  background-color: #e09900;
+  cursor: pointer;
+}
+
+.searchPage {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-width: 768px) {
+  .search {
+    margin-left: 15%;
+    margin-right: 10%;
+  }
+
+  .search-field {
+    width: 50%;
+    height: 2rem;
+  }
+
+  .search-btn {
+    height: 2rem;
+    width: 3rem;
+  }
+}
